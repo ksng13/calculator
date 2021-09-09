@@ -30,10 +30,35 @@ def handleinput(input):
             funcArray.append(char)
 
 
+
     print(operatorArray)
     print(varArray)
     print(numberArray)
     print(check_sequence(numberArray))
     return resultArray
 
-handleinput(in1)
+def calcFunc(string,value):
+    import os
+
+    f = open("gen1.py", "w")
+    f.write('def tinh(x):\n')
+    f.write('   return %s\n'%funcHandle(string))
+
+    f.write('print("Gia tri f(x) khi x = %d la ",tinh(%d))\n'%(value,value))
+    f.close()
+
+    os.system('py gen1.py')
+
+def funcHandle(funcString):
+    if '^' in funcString:
+        newString=funcString.replace('^','**')
+    else:
+        newString=funcString
+    return newString
+
+def funcDerivative(funcString):
+    for index, char in enumerate(funcString):
+        if char =='^':
+            pass
+
+calcFunc(in1,3)
