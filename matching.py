@@ -11,6 +11,7 @@ def handleinput(input):
     numberArray=[]
     funcArray=[]
     operators = ['+','-','*','/','^','(',')']
+    resultArray = []
 
     array1=('@'.join(input)).split('@')
 
@@ -28,8 +29,11 @@ def handleinput(input):
             funcArray.append(index)
             funcArray.append(char)
 
+
     print(operatorArray)
     print(varArray)
     print(numberArray)
     print(check_sequence(numberArray))
+    return resultArray
+
 handleinput(in1)
